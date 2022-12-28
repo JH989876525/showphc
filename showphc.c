@@ -5,6 +5,11 @@
  * https://opensource.org/licenses/MIT
  */
 
+/**
+ * Reference from https://github.com/richardcochran/linuxptp/blob/v3.1.1/phc.c
+ * Trying to get the phc clock from xlnx TSN IP
+*/
+
 #include <unistd.h>
 #include <stdio.h>
 #include <string.h>
@@ -26,12 +31,6 @@ int main(int argc, char *argv[])
 	clockid_t clkid;
 	struct timespec ts;
 	int fd;
-
-    
-	if (argv[1] != NULL)
-	{
-        printf("%s\n",argv[1]);
-    }
 
     fd = open(argv[1], O_RDWR);
 
